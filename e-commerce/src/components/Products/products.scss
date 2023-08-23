@@ -1,0 +1,35 @@
+@import "../../components/css-config/mixins.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.product-container{
+    width: calc(100% - 60px);
+    margin: 0px auto;
+    @include md{
+        width: calc(100% - 190px);
+    }
+    .heading{
+        font-size: 20px;
+            font-weight: 600;
+            @include md{
+                font-size: 30px;
+                
+            }
+        &::after{
+            content: "";
+            display: block;
+            width: 70px;
+            height: 4px;
+            background-color: rgb(195, 0, 255);
+        }
+    }
+    .product{
+        display: flex;
+        gap:10px;
+        flex-wrap: wrap;
+       
+    }
+}

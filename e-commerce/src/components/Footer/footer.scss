@@ -1,0 +1,128 @@
+@import "../../components/css-config/mixins.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.footer-container {
+  // position: relative;
+  // width: 100;
+  padding-top: 20px;
+  // margin: 0 auto;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  .footer {
+    padding-bottom: 40px;
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    padding-left: 0;
+    flex-direction: column;
+    @include md {
+      flex-direction: row;
+      padding-left: 146px;
+    }
+    .col {
+      width: 300px;
+      @include sm {
+      }
+      .title {
+        font-size: 23px;
+        font-weight: 600;
+        padding-top: 10px;
+        @include md {
+          font-size: 33px;
+          font-weight: 600;
+          padding-top: 0;
+        }
+      }
+      .text {
+        color: rgb(132 126 126);
+        padding-top: 5px;
+        padding-left: 2px;
+        font-size: 14px;
+        cursor: pointer;
+        &:hover{
+          color: rgb(79, 78, 78);;
+        }
+        a{
+          text-decoration: none;
+          color: rgb(132 126 126);
+          &:hover{
+            color: rgb(79, 78, 78);;
+          }
+        }
+        @include md {
+          font-size: 18px;
+          padding-top: 10px;
+        }
+      }
+      .icon {
+        display: flex;
+        color: rgb(132 126 126);
+        padding-top: 10px;
+        font-size: 14px;
+        @include md{
+            font-size: 18px;
+        }
+        svg {
+          padding-right: 10px;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          // margin:auto 0px;
+          padding-top: 2px;
+          @include md{
+            padding-right: 20px;
+          }
+        }
+        .one {
+          padding-top: 6px;
+        }
+      }
+    }
+  }
+  .footer-bottom {
+    border-top: 1px solid grey;
+    background-color: black;
+    color: white;
+    padding-bottom: 20px;
+    .footer-final {
+      padding-top: 10px;
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      justify-content: space-between;
+      p{
+          padding-bottom: 14px;
+          font-size: 14px;
+      }
+      @include md{
+        flex-direction: row;
+        padding-top: 30px;
+        // padding-bottom: 10px;
+        p{
+            padding-bottom: 0;
+            font-size: 18px;
+        }
+      }
+    }
+    .paymentImg {
+      width: 200px;
+      padding-left: 55px;
+      @include md{
+        width: 300px;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

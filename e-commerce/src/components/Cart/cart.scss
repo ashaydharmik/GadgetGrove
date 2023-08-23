@@ -1,0 +1,156 @@
+@import "../css-config/mixins.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.cart-container {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 99;
+  .background {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+  .cartWindow {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    animation: cartPopUp 0.3s ease-in-out forwards;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .cart-heading{
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        
+        h1{
+            font-size: 22px;
+            @include md{
+                font-size: 27px;  
+            }
+        }
+        .cart-btn{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            &:hover{
+                color: rgba(0, 0, 0, 0.5);
+            }
+            svg{
+                font-size: 14px;
+                padding: 5px;
+                padding-top: 8px;
+                @include md{
+                    font-size: 18px; 
+                    
+                }
+            }
+            span{
+                font-size: 17px;
+                @include md{
+                    font-size: 23px;
+                }
+            }
+        }
+    }
+    .empty-cart{
+       display: flex;
+       flex-direction: column;
+       margin-top: 100px;
+       justify-content: center;
+       align-items: center;
+       svg{
+        width: 100px;
+        height: 100px;
+        color: rgba(0,0,0,0.3);
+        // justify-content: center;
+       }
+       span{
+        margin: 10px;
+        text-align: center;
+       }
+       button{
+        color: white;
+        background: rgb(55, 10, 177);
+        background: linear-gradient(
+          305deg,
+          rgba(55, 10, 177, 1) 39%,
+          rgba(86, 74, 248, 1) 100%
+        );
+        
+        font-weight: 600;
+        letter-spacing: 1px;
+        // border: 1px solid white;
+        cursor: pointer;
+        padding: 5px;
+       }
+    }
+    @include md {
+      width: 350px;
+      z-index: 1;
+    }
+    .cart-footer{
+      border-top: 1px solid rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      .total{
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        span{
+          font-weight: 600;
+          font-size: 18px;
+        }
+      }
+      .button{
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        width: 100%;
+        button{
+          color: white;
+    background: rgb(55, 10, 177);
+    background: linear-gradient(305deg, rgb(55, 10, 177) 39%, rgb(86, 74, 248) 100%);
+    /* border: none; */
+    font-weight: 600;
+    letter-spacing: 1px;
+    /* border: 1px solid white; */
+    cursor: pointer;
+    padding: 11px 76px;
+    font-size: 18px;
+        }
+      }
+    }
+  }
+
+
+}
+
+@keyframes cartPopUp {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+
+
